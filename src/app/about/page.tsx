@@ -46,14 +46,16 @@ export default function New() {
       event: '日本医科大学入学',
     },
   ];
+  const certificates =["英検準一級", "漢検２級"];
 
   return (
     <>
-    <div className="size-max">
-      <Table>
+    <div className="w-auto mx-8">
+      <h1 className="text-2xl">Career</h1>
+      <Table className="w-full">
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">Year</TableHead>
+            <TableHead>Year</TableHead>
             <TableHead className="text-left">Status</TableHead>
           </TableRow>
         </TableHeader>
@@ -62,11 +64,22 @@ export default function New() {
             <TableRow key={event.event}>
               <TableCell className="font-medium">{event.year}</TableCell>
               <TableCell className="text-left">{event.event}</TableCell>
-            </TableRow>
+            </TableRow> 
           ))}
         </TableBody>
       </Table>
     </div>     
+    <div className="w-auto mx-8 mt-6">
+      <h1 className="text-2xl mb-2">Certificate</h1>
+      {certificates.map((c)=>(
+        <li>{c}</li>
+      ))}
+      
+    </div>   
+    <div className="w-auto mx-8 mt-6">
+      <h1 className="text-2xl">Note</h1>
+      <iframe src="https://note.com/embed/notes/n326d33efe6f7" ></iframe><script async src="https://note.com/scripts/embed.js" ></script>  
+    </div>
     </>
   );
 }

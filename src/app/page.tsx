@@ -143,9 +143,9 @@ export default function Home() {
                 <p className="font-medium">AIスタートアップ インターン（2025年〜）</p>
                 <p className="text-gray-600">
                   東大松尾研系のAIスタートアップで学習・開発実務に参画予定／進行中。<br></br>
-                  kaggle titanicコンペへの参加、分析モデル入門の読破、transformerの原文読破
-                  <li>LightGBM＋特徴量設計</li>
-                  <li>CV ≈ 0.83、LB ≈ 0.79</li>
+                  kaggle titanicコンペへの参加、分析モデル入門の読破、transformerの原文読破<br></br>
+                  LightGBM＋特徴量設計<br></br>
+                  CV ≈ 0.83、LB ≈ 0.79
                 </p>
               </div>
               <div className="rounded-xl border border-gray-200 p-3">
@@ -188,21 +188,6 @@ export default function Home() {
               <li>医療データの可視化・意思決定支援ツールを自作し、医療DXに寄与</li>
               <li>アニメ制作工程のエラー検出・効率化（QC）にデータとソフトウェアで挑戦</li>
             </ul>
-          </div>
-
-          {/* Contact placeholder */}
-          <div id="contact" className="rounded-2xl border border-gray-200 bg-white p-5">
-            <h2 className="mb-3 text-lg font-semibold tracking-tight">お問い合わせ</h2>
-            <p className="text-sm text-gray-700">
-              ご連絡は
-              <a
-                href="mailto:yangtaihubu@gmail.com"
-                className="mx-1 text-blue-600 underline decoration-dotted underline-offset-4 hover:text-blue-700"
-              >
-                yangtaihubu@gmail.com
-              </a>
-              からお願いします。
-            </p>
           </div>
         </div>
       </section>

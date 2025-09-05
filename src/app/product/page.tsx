@@ -1,31 +1,23 @@
 'use client';
 import { useState } from "react";
-import {Button} from "@/components/ui/button"
-import Header from "@/components/header"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 
 export default function New(){
-  const [count, setCount] = useState(0);
-  const increment = ()=>{
-    setCount(count+1);
-  }
-  const decrement = ()=>{
-    setCount(count-1);
-  }
-  const reset = ()=>{
-    setCount(0);
-  }
   return (
     <>
-      <div>
-        
-        <h1>{count}</h1>
-        <Button variant='outline'>foajfjf</Button>
-        <button className="rounded-full mx-10 bg-red-500 text-white px-3" onClick={increment}>+</button>
-        <button className="bg-green-500 text-white px-3" onClick={decrement}>-</button>
-        <button className="bg-purple-500 text-white px-3" onClick={reset}>reset</button>
+      <div className="mx-8 w-full h-full">
+        <h1 className="text-2xl mt-4 ">HTML CSS JS</h1>
+        <ul className="w-full">
+          <li><a href="https://to-be-sun.github.io/FM6-3-Mortgage-repayment-calculator/" >Mortgage repayment calculator</a></li>
+          <iframe src="https://to-be-sun.github.io/FM6-3-Mortgage-repayment-calculator/" className="w-full h-180 mt-2"></iframe> 
+        </ul>
+        <h1 className="text-2xl mt-4">API連携</h1>
+        <ul>
+          <li><a href="https://to-be-sun.github.io/my-favorite-restaurant/">お気に入りの飲食店</a></li>
+          <iframe src="https://to-be-sun.github.io/my-favorite-restaurant/" className="w-full h-180 mt-2"></iframe>
+        </ul>
       </div>
+      
+      
     </>
   );
 }
