@@ -72,7 +72,7 @@ export default function New() {
     <div className="w-auto mx-8 mt-6">
       <h1 className="text-2xl mb-2">Certificate</h1>
       {certificates.map((c)=>(
-        <li>{c}</li>
+        <li key={c}>{c}</li>
       ))}
       
     </div>   
