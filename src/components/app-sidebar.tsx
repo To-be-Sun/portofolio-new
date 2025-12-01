@@ -22,11 +22,6 @@ const items = [
     title: "Product",
     url: "/product",
     icon: Inbox,
-  },
-  {
-    title: "About",
-    url: "/about",
-    icon: Inbox,
   }
 ]
 
