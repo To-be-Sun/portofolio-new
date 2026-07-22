@@ -1,5 +1,6 @@
 'use client';
 import React from "react";
+import Image from "next/image";
 import {MarkGithubIcon} from '@primer/octicons-react'
 import {
   Table,
@@ -204,11 +205,15 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group/thumb block overflow-hidden rounded-xl border border-gray-100 hover:border-amber-300 hover:shadow-md transition-all duration-200"
                   >
-                    <img
-                      src={c.image}
-                      alt={`${c.name}の合格証`}
-                      className="w-full h-32 object-cover object-top bg-gray-50 group-hover/thumb:scale-105 transition-transform duration-200"
-                    />
+                    <div className="relative w-full h-32 bg-gray-50">
+                      <Image
+                        src={c.image!}
+                        alt={`${c.name}の合格証`}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 200px"
+                        className="object-cover object-top group-hover/thumb:scale-105 transition-transform duration-200"
+                      />
+                    </div>
                     <p className="px-2 py-1.5 text-xs text-center text-gray-600 bg-gray-50">{c.name}</p>
                   </a>
                 ))}
