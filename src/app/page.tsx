@@ -45,7 +45,12 @@ export default function Home() {
       event: '日本医科大学入学',
     },
   ];
-  const certificates = ["英検準一級", "漢検２級"];
+  const certificates = [
+    { name: "英検準１級" },
+    { name: "漢検２級" },
+    { name: "統計検定２級", image: "/certificates/toukei-kentei-2kyu-preview.png", file: "/certificates/toukei-kentei-2kyu.pdf" },
+    { name: "G検定", image: "/certificates/g-kentei-preview.png", file: "/certificates/g-kentei.pdf" },
+  ];
 
   const skills = [
     { name: "HTML", color: "from-orange-500 to-orange-600" },
@@ -170,11 +175,43 @@ export default function Home() {
             </div>
             <div className="space-y-2">
               {certificates.map((c) => (
-                <div key={c} className="flex items-center gap-2 text-sm text-gray-700">
+                <div key={c.name} className="flex items-center gap-2 text-sm text-gray-700">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                  {c}
+                  {c.file ? (
+                    <a
+                      href={c.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-amber-600 hover:underline"
+                    >
+                      {c.name}
+                    </a>
+                  ) : (
+                    c.name
+                  )}
                 </div>
               ))}
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              {certificates
+                .filter((c) => c.image)
+                .map((c) => (
+                  <a
+                    key={c.name}
+                    href={c.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/thumb block overflow-hidden rounded-xl border border-gray-100 hover:border-amber-300 hover:shadow-md transition-all duration-200"
+                  >
+                    <img
+                      src={c.image}
+                      alt={`${c.name}の合格証`}
+                      className="w-full h-32 object-cover object-top bg-gray-50 group-hover/thumb:scale-105 transition-transform duration-200"
+                    />
+                    <p className="px-2 py-1.5 text-xs text-center text-gray-600 bg-gray-50">{c.name}</p>
+                  </a>
+                ))}
             </div>
           </div>
 
