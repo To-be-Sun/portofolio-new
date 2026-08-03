@@ -1,7 +1,8 @@
 'use client';
 import React from "react";
 import Image from "next/image";
-import {MarkGithubIcon} from '@primer/octicons-react'
+import { MarkGithubIcon } from '@primer/octicons-react';
+import { Mail, Award, PenLine, Clock, Briefcase, ExternalLink } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -10,41 +11,24 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
   const events = [
-    {
-      year: 2004,
-      event: '岐阜県出身',
-    },
-    {
-      year: 2010,
-      event: '岐阜聖徳学園大学付属小学校入学',
-    },
-    {
-      year: 2016,
-      event: '岐阜聖徳学園大学付属小学校卒業',
-    },
-    {
-      year: 2016,
-      event: '名古屋中学校入学',
-    },
-    {
-      year: 2019,
-      event: '名古屋中学校卒業',
-    },
-    {
-      year: 2019,
-      event: '名古屋高校入学',
-    },
-    {
-      year: 2022,
-      event: '名古屋高校卒業',
-    },
-    {
-      year: 2023,
-      event: '日本医科大学入学',
-    },
+    { year: 2004, event: '岐阜県出身' },
+    { year: 2010, event: '岐阜聖徳学園大学付属小学校入学' },
+    { year: 2016, event: '岐阜聖徳学園大学付属小学校卒業' },
+    { year: 2016, event: '名古屋中学校入学' },
+    { year: 2019, event: '名古屋中学校卒業' },
+    { year: 2019, event: '名古屋高校入学' },
+    { year: 2022, event: '名古屋高校卒業' },
+    { year: 2023, event: '日本医科大学入学' },
   ];
   const certificates = [
     { name: "英検準１級" },
@@ -54,51 +38,34 @@ export default function Home() {
   ];
 
   const skills = [
-    { name: "HTML", color: "from-orange-500 to-orange-600" },
-    { name: "CSS", color: "from-blue-500 to-blue-600" },
-    { name: "JavaScript", color: "from-yellow-400 to-amber-500" },
-    { name: "React", color: "from-cyan-500 to-blue-500" },
-    { name: "Next.js", color: "from-gray-700 to-gray-900" },
-    { name: "TypeScript", color: "from-blue-500 to-blue-700" },
-    { name: "Python", color: "from-yellow-400 to-green-500" },
-    { name: "FastAPI", color: "from-teal-500 to-emerald-600" },
-    { name: "Supabase", color: "from-emerald-500 to-green-600" },
-    { name: "Prisma", color: "from-indigo-500 to-purple-600" },
+    "HTML", "CSS", "JavaScript", "React", "Next.js",
+    "TypeScript", "Python", "FastAPI", "Supabase", "Prisma",
+  ];
+
+  const internships = [
+    { name: "Wanderlust", url: "https://wander-lust.io/" },
+    { name: "はてなベース", url: "https://hatenabase.jp/" },
+    { name: "CLINIAL", url: "https://clinial.co.jp/" },
   ];
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-8">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 shadow-2xl">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-        
-        <div className="relative px-8 py-16 sm:px-12 sm:py-20">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs mb-4 backdrop-blur-sm border border-white/10">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                医学生 × エンジニア
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
-                戸部 陽太
-              </h1>
-              <p className="text-xl text-white/60 mt-1">Tobe Hinata</p>
-            </div>
-          </div>
-          
-          {/* Skill Tags */}
-          <div className="mt-8 flex flex-wrap gap-2">
-            {skills.map((skill) => (
-              <span
-                key={skill.name}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium text-white bg-gradient-to-r ${skill.color} shadow-lg shadow-black/20 hover:scale-105 transition-transform cursor-default`}
-              >
-                {skill.name}
-              </span>
-            ))}
-          </div>
+      <section className="rounded-xl border bg-card p-8 sm:p-10">
+        <Badge variant="secondary" className="mb-4">
+          医学生 × エンジニア
+        </Badge>
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+          戸部 陽太
+        </h1>
+        <p className="text-muted-foreground mt-1">Tobe Hinata</p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <Badge key={skill} variant="outline" className="font-normal">
+              {skill}
+            </Badge>
+          ))}
         </div>
       </section>
 
@@ -107,32 +74,30 @@ export default function Home() {
         {/* Sidebar */}
         <div className="md:col-span-1 space-y-6">
           {/* Contact */}
-          <div className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg hover:border-purple-200 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 text-white">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h2 className="text-lg font-semibold tracking-tight">連絡先</h2>
-            </div>
-            <div className="text-sm text-gray-600">
-              <p className="mb-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Mail className="h-4 w-4 text-muted-foreground" />
+                連絡先
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4 text-sm">
                 <a
                   href="mailto:yangtaihubu@gmail.com"
-                  className="text-blue-600 hover:text-blue-700 font-medium hover:underline"
+                  className="font-medium text-foreground hover:underline"
                 >
                   yangtaihubu@gmail.com
                 </a>
               </p>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <a
                   href="https://github.com/To-be-Sun"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gray-900 text-white hover:bg-gray-800 hover:scale-110 transition-all duration-200 shadow-md"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
                   <MarkGithubIcon size={18} />
                 </a>
@@ -142,9 +107,9 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white hover:scale-110 transition-all duration-200 shadow-md"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="currentColor" aria-hidden="true">
                     <path d="M12 2.2c3 0 3.3 0 4.5.1 1.2.1 1.9.3 2.4.6.6.3 1 .6 1.5 1.1.5.5.8.9 1.1 1.5.3.5.5 1.2.6 2.4.1 1.2.1 1.5.1 4.5s0 3.3-.1 4.5c-.1 1.2-.3 1.9-.6 2.4-.3.6-.6 1-1.1 1.5-.5.5-.9.8-1.5 1.1-.5.3-1.2.5-2.4.6-1.2.1-1.5.1-4.5.1s-3.3 0-4.5-.1c-1.2-.1-1.9-.3-2.4-.6a4.6 4.6 0 0 1-1.5-1.1 4.6 4.6 0 0 1-1.1-1.5c-.3-.5-.5-1.2-.6-2.4C2.2 15.3 2.2 15 2.2 12s0-3.3.1-4.5c.1-1.2.3-1.9.6-2.4.3-.6.6-1 1.1-1.5.5-.5.9-.8 1.5-1.1.5-.3 1.2-.5 2.4-.6C8.7 2.2 9 2.2 12 2.2Zm0 1.8c-3 0-3.3 0-4.4.1-1 .1-1.6.3-2 .5-.5.2-.8.5-1.1.9-.4.4-.7.7-.9 1.1-.2.4-.4 1-.5 2-.1 1.1-.1 1.4-.1 4.4s0 3.3.1 4.4c.1 1 .3 1.6.5 2 .2.5.5.8.9 1.1.4.4.7.7 1.1.9.4.2 1 .4 2 .5 1.1.1 1.4.1 4.4.1s3.3 0 4.4-.1c1-.1 1.6-.3 2-.5.5-.2.8-.5 1.1-.9.4-.4.7-.7.9-1.1.2-.4.4-1 .5-2 .1-1.1.1-1.4.1-4.4s0-3.3-.1-4.4c-.1-1-.3-1.6-.5-2-.2-.5-.5-.8-.9-1.1a3.2 3.2 0 0 0-1.1-.9c-.4-.2-1-.4-2-.5-1.1-.1-1.4-.1-4.4-.1Zm0 3.1a5.9 5.9 0 1 1 0 11.8 5.9 5.9 0 0 1 0-11.8Zm0 1.8a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2Zm5-2.1a1.3 1.3 0 1 1 0 2.7 1.3 1.3 0 0 1 0-2.7Z"/>
                   </svg>
                 </a>
@@ -154,178 +119,149 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-black text-white hover:bg-gray-800 hover:scale-110 transition-all duration-200 shadow-md"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="currentColor" aria-hidden="true">
                     <path d="M18.244 2.25h3.01l-6.58 7.52 7.73 11.98h-6.06l-4.74-6.9-5.42 6.9H3.17l7.04-8.97L2.7 2.25h6.22l4.28 6.16 5.04-6.16Zm-1.06 18.28h1.67L7.9 4.9H6.12l11.06 15.63Z"/>
                   </svg>
                 </a>
               </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Certificate */}
-          <div className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg hover:border-amber-200 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-white">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-              </div>
-              <h2 className="text-lg font-semibold tracking-tight">資格</h2>
-            </div>
-            <div className="space-y-2">
-              {certificates.map((c) => (
-                <div key={c.name} className="flex items-center gap-2 text-sm text-gray-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                  {c.file ? (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Award className="h-4 w-4 text-muted-foreground" />
+                資格
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                {certificates.map((c) => (
+                  <li key={c.name} className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
+                    {c.file ? (
+                      <a
+                        href={c.file}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        {c.name}
+                      </a>
+                    ) : (
+                      c.name
+                    )}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {certificates
+                  .filter((c) => c.image)
+                  .map((c) => (
                     <a
+                      key={c.name}
                       href={c.file}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-amber-600 hover:underline"
+                      className="group block overflow-hidden rounded-lg border hover:bg-accent transition-colors"
                     >
-                      {c.name}
+                      <div className="relative h-32 w-full bg-muted">
+                        <Image
+                          src={c.image!}
+                          alt={`${c.name}の合格証`}
+                          fill
+                          sizes="(max-width: 768px) 50vw, 200px"
+                          className="object-cover object-top"
+                        />
+                      </div>
+                      <p className="px-2 py-1.5 text-center text-xs text-muted-foreground">{c.name}</p>
                     </a>
-                  ) : (
-                    c.name
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              {certificates
-                .filter((c) => c.image)
-                .map((c) => (
-                  <a
-                    key={c.name}
-                    href={c.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/thumb block overflow-hidden rounded-xl border border-gray-100 hover:border-amber-300 hover:shadow-md transition-all duration-200"
-                  >
-                    <div className="relative w-full h-32 bg-gray-50">
-                      <Image
-                        src={c.image!}
-                        alt={`${c.name}の合格証`}
-                        fill
-                        sizes="(max-width: 768px) 50vw, 200px"
-                        className="object-cover object-top group-hover/thumb:scale-105 transition-transform duration-200"
-                      />
-                    </div>
-                    <p className="px-2 py-1.5 text-xs text-center text-gray-600 bg-gray-50">{c.name}</p>
-                  </a>
-                ))}
-            </div>
-          </div>
+                  ))}
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Note */}
-          <div className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg hover:border-teal-200 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-600 text-white">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <PenLine className="h-4 w-4 text-muted-foreground" />
+                Note
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-hidden rounded-lg border">
+                <iframe src="https://note.com/embed/notes/n326d33efe6f7" className="w-full h-[180px]"></iframe>
               </div>
-              <h2 className="text-lg font-semibold tracking-tight">Note</h2>
-            </div>
-            <div className="rounded-xl overflow-hidden border border-gray-100">
-              <iframe src="https://note.com/embed/notes/n326d33efe6f7" className="w-full h-[180px]"></iframe>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Main content */}
         <div className="md:col-span-2 space-y-6">
           {/* Career */}
-          <div className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Clock className="h-4 w-4 text-muted-foreground" />
+                経歴
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-hidden rounded-lg border">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-muted/50">
+                      <TableHead className="font-medium">Year</TableHead>
+                      <TableHead className="text-left font-medium">Status</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {events.map((event) => (
+                      <TableRow key={event.event}>
+                        <TableCell className="font-medium text-muted-foreground">{event.year}</TableCell>
+                        <TableCell className="text-left">{event.event}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
               </div>
-              <h2 className="text-lg font-semibold tracking-tight">経歴</h2>
-            </div>
-            <div className="overflow-hidden rounded-xl border border-gray-100">
-              <Table className="w-full">
-                <TableHeader>
-                  <TableRow className="bg-gradient-to-r from-indigo-50 to-violet-50">
-                    <TableHead className="font-semibold text-indigo-700">Year</TableHead>
-                    <TableHead className="text-left font-semibold text-indigo-700">Status</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {events.map((event, index) => (
-                    <TableRow key={event.event} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
-                      <TableCell className="font-medium text-indigo-600">{event.year}</TableCell>
-                      <TableCell className="text-left text-gray-700">{event.event}</TableCell>
-                    </TableRow> 
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Experience */}
-          <div className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Briefcase className="h-4 w-4 text-muted-foreground" />
+                インターン経験
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {internships.map((intern) => (
+                  <a
+                    key={intern.name}
+                    href={intern.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group rounded-lg border p-4 hover:bg-accent transition-colors"
+                  >
+                    <p className="font-medium text-foreground">{intern.name}</p>
+                    <p className="mb-3 text-xs text-muted-foreground">インターン</p>
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                      <span>Visit site</span>
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </div>
+                  </a>
+                ))}
               </div>
-              <h2 className="text-lg font-semibold tracking-tight">インターン経験</h2>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              <a 
-                href="https://wander-lust.io/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100 hover:shadow-md hover:scale-[1.02] transition-all duration-200"
-              >
-                <p className="font-semibold text-blue-700">Wanderlust</p>
-                <p className="text-xs text-blue-600 mb-2">インターン</p>
-                <div className="flex items-center gap-1 text-sm text-blue-500">
-                  <span>Visit site</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-              <a 
-                href="https://hatenabase.jp/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-4 border border-orange-100 hover:shadow-md hover:scale-[1.02] transition-all duration-200"
-              >
-                <p className="font-semibold text-orange-700">はてなベース</p>
-                <p className="text-xs text-orange-600 mb-2">インターン</p>
-                <div className="flex items-center gap-1 text-sm text-orange-500">
-                  <span>Visit site</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-              <a 
-                href="https://clinial.co.jp/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100 hover:shadow-md hover:scale-[1.02] transition-all duration-200"
-              >
-                <p className="font-semibold text-green-700">CLINIAL</p>
-                <p className="text-xs text-green-600 mb-2">インターン</p>
-                <div className="flex items-center gap-1 text-sm text-green-500">
-                  <span>Visit site</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </main>
