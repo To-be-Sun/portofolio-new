@@ -29,7 +29,7 @@ export default function Product(){
     {
       title: "GPT Clone",
       description: "ChatGPT風AIチャットアプリ",
-      url: "https://github.com/To-be-Sun/gpt-clone",
+      url: "https://gpt-clone-henna-eight.vercel.app/",
       color: "from-green-500 to-emerald-600",
       hoverBorder: "hover:border-green-200",
       skills: ["React", "Next.js", "TypeScript", "Python", "FastAPI", "OpenAI API"],
