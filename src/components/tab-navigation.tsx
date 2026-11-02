@@ -2,18 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, FolderOpen } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 const tabs = [
   {
     name: 'Home',
     href: '/',
     icon: Home,
-  },
-  {
-    name: 'Product',
-    href: '/product',
-    icon: FolderOpen,
   },
 ];
 

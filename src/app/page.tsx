@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { MarkGithubIcon } from '@primer/octicons-react';
-import { Mail, Award, PenLine, Clock, Briefcase, ExternalLink } from 'lucide-react';
+import { Mail, Award, PenLine, Clock, Briefcase, ExternalLink, FolderOpen } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -16,6 +16,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
+  CardDescription,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -48,6 +49,14 @@ export default function Home() {
     { name: "CLINIAL", url: "https://clinial.co.jp/" },
   ];
 
+  const product = {
+    title: "PCA AI Agent",
+    description: "プラントの運転データ（CSV / Excel）を、画面の質問に答えながら前処理・主成分分析・クラスタリング・グループ評価まで進める分析ツール。迷ったときはAIに結果の説明と推奨の選択肢を聞けます。",
+    url: "https://pca-ai-agent.vercel.app",
+    image: "/products/pca-ai-agent.gif",
+    skills: ["React", "Next.js", "TypeScript", "Python", "FastAPI", "scikit-learn", "OpenAI API"],
+  };
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-8">
       {/* Hero */}
@@ -67,6 +76,52 @@ export default function Home() {
             </Badge>
           ))}
         </div>
+      </section>
+
+      {/* Product */}
+      <section>
+        <a
+          href={product.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block"
+        >
+          <Card className="transition-colors hover:border-foreground/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <FolderOpen className="h-4 w-4 text-muted-foreground" />
+                成果物
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-6 md:grid-cols-2">
+              <div className="relative aspect-[8/5] overflow-hidden rounded-lg border bg-muted">
+                <Image
+                  src={product.image}
+                  alt={`${product.title}の操作画面`}
+                  fill
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 560px"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="space-y-3">
+                <p className="font-medium text-foreground">{product.title}</p>
+                <CardDescription>{product.description}</CardDescription>
+                <div className="flex flex-wrap gap-1">
+                  {product.skills.map((skill) => (
+                    <Badge key={skill} variant="secondary" className="font-normal">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                  <span>Visit site</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </a>
       </section>
 
       {/* 2-column */}
