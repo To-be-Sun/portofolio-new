@@ -46,7 +46,7 @@ export default function Home() {
   ];
 
   const internships = [
-    { period: "2026.09 – 現在", name: "LocalX株式会社", url: "https://www.localx.jp/", detail: "GAS などによる業務効率化" },
+    { period: "2026.09 – 現在", name: "LocalX株式会社", url: "https://www.localx.jp/", detail: "求人サイトの自動収集と機械学習による求人の採点、GAS での Notion・Google Chat 連携" },
     { period: "2025.10 – 現在", name: "株式会社CLINIAL", url: "https://clinial.co.jp/", detail: "EHR（電子カルテ）データの解析" },
     { period: "2025.07 – 2025.12", name: "はてなベース株式会社", url: "https://hatenabase.jp/", detail: "kintone 周辺の開発" },
     { period: "2025.04 – 2026.02", name: "株式会社Wanderlust", url: "https://wander-lust.io/", detail: "データ分析手法の習得、主成分分析の AI エージェント開発" },
